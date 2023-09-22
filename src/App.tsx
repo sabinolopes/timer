@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Timer from './components/timer';
-import Buttons from './components/Buttons';
+import Buttons from './components/buttons';
 import { TimeType } from './utils/types';
 import INNITIAL_STATE from './utils/INNITIAL_STATE';
 import './App.css';
@@ -25,6 +25,7 @@ function App() {
 
   return (
     <>
+      <p>Digite um valor</p>
       <Timer
         time={ time }
         setTime={ setTime }
