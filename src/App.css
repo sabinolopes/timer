@@ -64,7 +64,7 @@ input {
   text-align: center;
 }
 
-p {
+h1 {
    color: white;
    text-align: center;
    font-size: xx-large;
@@ -80,7 +80,7 @@ p {
 
   input {
     width: 100%;
-    font-size: 75px;
+    font-size: 72px;
   }
 
   span {

@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <p>Digite um valor</p>
+      <h1>Digite um valor</h1>
       <Timer
         time={ time }
         setTime={ setTime }
