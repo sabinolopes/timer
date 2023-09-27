@@ -9,13 +9,13 @@ export default function Buttons({ startTimer, pauseTimer,
   resetTimer, isRunning }: ButtonsProps) {
   return (
     <div id="buttons">
-      <button onClick={ startTimer } disabled={ isRunning }>
+      <button id="start" onClick={ startTimer } disabled={ isRunning }>
         Iniciar
       </button>
-      <button onClick={ pauseTimer } disabled={ !isRunning }>
+      <button id="pause" onClick={ pauseTimer } disabled={ !isRunning }>
         Pausar
       </button>
-      <button onClick={ resetTimer } disabled={ isRunning }>
+      <button id="reset" onClick={ resetTimer } disabled={ isRunning }>
         Reiniciar
       </button>
     </div>

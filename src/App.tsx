@@ -20,7 +20,6 @@ function App() {
   const resetTimer = () => {
     setIsRunning(false);
     setTime(INNITIAL_STATE);
-    setTime(INNITIAL_STATE);
   };
 
   return (
