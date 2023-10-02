@@ -15,7 +15,7 @@ export default function Buttons({ startTimer, pauseTimer,
       <button id="pause" onClick={ pauseTimer } disabled={ !isRunning }>
         Pausar
       </button>
-      <button id="reset" onClick={ resetTimer } disabled={ isRunning }>
+      <button id="reset" onClick={ resetTimer } disabled={ !isRunning }>
         Reiniciar
       </button>
     </div>

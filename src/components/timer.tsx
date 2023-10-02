@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { TimeType } from '../utils/types';
+import Audio from './audio';
 
 type TimerProps = {
   time: TimeType,
@@ -9,6 +10,8 @@ type TimerProps = {
 };
 
 export default function Timer({ time, setTime, isRunning, setIsRunning }: TimerProps) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     const nValue = Number(value);
@@ -18,12 +21,19 @@ export default function Timer({ time, setTime, isRunning, setIsRunning }: TimerP
     }
   };
 
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
   useEffect(() => {
     let interval: number | undefined;
 
     if (isRunning) {
       interval = setInterval(() => {
         if (time.minutes === 0 && time.seconds === 0) {
+          playAudio();
           setIsRunning(false);
         } else if (time.seconds === 0) {
           setTime({ ...time, minutes: time.minutes - 1 });
@@ -73,6 +83,7 @@ export default function Timer({ time, setTime, isRunning, setIsRunning }: TimerP
         onChange={ handleChange }
         readOnly={ isRunning }
       />
+      <Audio audioRef={ audioRef } />
     </div>
   );
 }
